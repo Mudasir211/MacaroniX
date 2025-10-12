@@ -1,0 +1,27 @@
+@import "tailwindcss";
+html,
+body {
+  scroll-behavior: smooth;
+  background-color: #000;
+  color: white;
+
+  font-family: var(--font-oswald);
+}
+p {
+  font-family: var(--font-outfit);
+}
+:root {
+  --font-outfit: "Outfit", sans-serif;
+  --font-oswald: "Oswald", sans-serif;
+  --font-orbitron: "Orbitron", sans-serif;
+}
+.font-outfit {
+  font-family: var(--font-outfit);
+}
+
+.font-oswald {
+  font-family: var(--font-oswald);
+}
+.font-orbitron {
+  font-family: var(--font-orbitron);
+}
