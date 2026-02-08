@@ -57,10 +57,10 @@ export default function StartWithUs() {
             key={i}
             whileHover={{ y: -6 }}
             className="bg-[#101010] p-8 rounded-2xl border border-[#3ab7f0]/30 shadow-[0_0_20px_rgba(58,183,240,0.15)] hover:shadow-[0_0_40px_rgba(58,183,240,0.4)] transition"
-          >
+          > <Link href={'contact'}>
             <div className="flex justify-center mb-4">{step.icon}</div>
             <h3 className="text-xl font-semibold mb-2 text-[#3ab7f0]">{step.title}</h3>
-            <p className="text-gray-400 text-sm">{step.desc}</p>
+            <p className="text-gray-400 text-sm">{step.desc}</p></Link>
           </motion.div>
         ))}
       </div>
