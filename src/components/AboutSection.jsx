@@ -178,9 +178,9 @@ export default function AboutSection() {
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {[
-            { name: "Aisha Khan", role: "Creative Director", img: "/team/aisha.jpg" },
-            { name: "Rohit Verma", role: "Lead Developer", img: "/team/rohit.jpg" },
-            { name: "Maya Patel", role: "Head of Strategy", img: "/team/maya.jpg" },
+            { name: "Mukarram Shafi", role: "Creative Director", img: "/team/aisha.jpg" },
+            { name: "Mudsasir Ahmed", role: "Lead Developer", img: "/team/rohit.jpg" },
+            { name: "Uzair Ahmed", role: "Video Editor", img: "/team/maya.jpg" },
           ].map((m, i) => (
             <motion.div
               key={i}
