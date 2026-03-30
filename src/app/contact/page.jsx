@@ -157,11 +157,11 @@ export default function ContactPage() {
           Visit Our Studio
         </motion.h3>
         <p className="text-gray-600 mb-6">
-          221B Creative Street, Sector 9, New Delhi, India
+          Sargodha,Pakistan
         </p>
         <div className="rounded-2xl overflow-hidden shadow-lg border border-[#3ab7f0]/20 max-w-4xl mx-auto">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093643!2d144.9537353153195!3d-37.8162797420217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727b3b8d1b7b8!2sCreative%20Studio!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d91160.36395513797!2d72.697033!3d32.05496005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39217439502694e3%3A0x55e1bad6edcbbc70!2sSargodha%2C%20Pakistan!5e1!3m2!1sen!2s!4v1774854250705!5m2!1sen!2s"
             width="100%"
             height="350"
             style={{ border: 0 }}
