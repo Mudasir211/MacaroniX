@@ -93,7 +93,7 @@ export default function PortfolioSection() {
       filter === ALL_TAG
         ? projectsData
         : projectsData.filter((p) => p.category === filter),
-    [filter]
+    [filter],
   );
 
   return (
