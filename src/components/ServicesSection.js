@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   FaLaptopCode,
@@ -11,34 +12,40 @@ import {
 
 const services = [
   {
-    icon: <FaPaintBrush size={35} style={{ color: "#3ab7f0" }} />,
-    title: "Design & Branding",
-    desc: "Bold visuals and identity design that define your brand.",
-  },
-  {
     icon: <FaUsers size={35} style={{ color: "#3ab7f0" }} />,
     title: "Social Media Management",
     desc: "Grow your presence with creative, data-driven content.",
-  },
-  {
-    icon: <FaLaptopCode size={35} style={{ color: "#3ab7f0" }} />,
-    title: "UI / UX Design",
-    desc: "Sleek, user-friendly interfaces built for engagement.",
-  },
-  {
-    icon: <FaLaptopCode size={35} style={{ color: "#3ab7f0" }} />,
-    title: "Website Development",
-    desc: "Fast, responsive, and conversion-focused websites.",
+    href: "/services/social",
   },
   {
     icon: <FaChartLine size={35} style={{ color: "#3ab7f0" }} />,
     title: "Digital Marketing",
     desc: "Smart strategies that attract, engage, and convert.",
+    href: "/services/marketing",
+  },
+  {
+    icon: <FaPaintBrush size={35} style={{ color: "#3ab7f0" }} />,
+    title: "Design & Branding",
+    desc: "Bold visuals and identity design that define your brand.",
+    href: "/services/design",
+  },
+  {
+    icon: <FaLaptopCode size={35} style={{ color: "#3ab7f0" }} />,
+    title: "UI / UX Design",
+    desc: "Sleek, user-friendly interfaces built for engagement.",
+    href: "/services/uiux",
+  },
+  {
+    icon: <FaLaptopCode size={35} style={{ color: "#3ab7f0" }} />,
+    title: "Website Development",
+    desc: "Fast, responsive, and conversion-focused websites.",
+    href: "/services/web",
   },
   {
     icon: <FaCamera size={35} style={{ color: "#3ab7f0" }} />,
     title: "Photo & Video",
-    desc: "Compelling visuals that tell your brand’s story.",
+    desc: "Compelling visuals that tell your brand's story.",
+    href: "/services/media",
   },
 ];
 
@@ -53,21 +60,25 @@ export default function ServicesSection() {
       </h2>
       <p className="text-gray-600 px-6 mb-12 max-w-2xl mx-auto">
         MacaroniX — a full-service Digital Marketing agency where creativity
-        meets technology. We transform ideas into powerful digital experiences.
+        meets technology.
       </p>
 
-      {/* Flex layout for proper centering */}
       <div className="flex flex-wrap justify-center gap-3 md:gap-8 max-w-7xl mx-auto">
         {services.map((s, i) => (
-          <motion.div
+          <Link
             key={i}
-            whileHover={{ y: -8 }}
-            className="bg-[#ffffff] md:p-6 p-4 rounded-2xl border border-[#3ab7f0] shadow-[0_0_10px_rgba(58,183,240,0.15)] hover:shadow-[0_0_20px_rgba(58,183,240,0.5)] transition flex flex-col items-center text-center w-[45%] sm:w-[40%] md:w-[28%] lg:w-[22%]"
+            href={s.href}
+            className="w-[45%] sm:w-[40%] md:w-[28%] lg:w-[22%]"
           >
-            <div className="mb-4 flex justify-center">{s.icon}</div>
-            <h3 className="text-xl font-semibold mb-1">{s.title}</h3>
-            <p className="text-gray-700 text-sm">{s.desc}</p>
-          </motion.div>
+            <motion.div
+              whileHover={{ y: -8 }}
+              className="bg-[#ffffff] md:p-6 p-4 rounded-2xl border border-[#3ab7f0] shadow-[0_0_10px_rgba(58,183,240,0.15)] hover:shadow-[0_0_20px_rgba(58,183,240,0.5)] transition flex flex-col items-center text-center h-full cursor-pointer"
+            >
+              <div className="mb-4 flex justify-center">{s.icon}</div>
+              <h3 className="text-xl font-semibold mb-1">{s.title}</h3>
+              <p className="text-gray-700 text-sm">{s.desc}</p>
+            </motion.div>
+          </Link>
         ))}
       </div>
     </section>
