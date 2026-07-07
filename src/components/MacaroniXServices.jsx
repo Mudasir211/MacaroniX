@@ -8,6 +8,7 @@ import {
   Code,
   Camera,
   ChevronRight,
+  ChevronDown,
   ArrowRight,
   CheckCircle,
   Star,
@@ -33,6 +34,7 @@ import {
   ShoppingCart,
   Search,
   Megaphone,
+  Quote,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -71,6 +73,16 @@ const services = [
         title: "SEO & Accessibility",
         desc: "Semantic HTML, structured data, WCAG 2.1 compliance — visible and usable by everyone.",
       },
+      {
+        icon: RefreshCw,
+        title: "Ongoing Support",
+        desc: "Monthly updates, security patches, and uptime monitoring so your site never falls behind.",
+      },
+      {
+        icon: BarChart2,
+        title: "Analytics & Insights",
+        desc: "Google Analytics and heatmap integration so you can see exactly how visitors behave.",
+      },
     ],
     platforms: [
       "Next.js",
@@ -107,6 +119,27 @@ const services = [
       { num: "90+", label: "Lighthouse score" },
       { num: "80+", label: "Sites shipped" },
     ],
+    faqs: [
+      {
+        q: "How long does a typical website take to build?",
+        a: "Most projects launch in 4–8 weeks depending on scope, from a five-page brochure site to a full custom platform.",
+      },
+      {
+        q: "Do you work with our existing brand guidelines?",
+        a: "Yes — we design within your existing brand system, or help build one from scratch if you don't have one yet.",
+      },
+      {
+        q: "What happens after launch?",
+        a: "We offer ongoing maintenance plans covering updates, backups, and small content changes, so the site keeps performing.",
+      },
+    ],
+    testimonial: {
+      quote:
+        "Our new site loads instantly and leads have nearly doubled since launch.",
+      name: "Sarah Chen",
+      role: "Founder",
+      company: "Bloom Studio",
+    },
     cta: "Build my website",
   },
   {
@@ -138,6 +171,16 @@ const services = [
         icon: Users,
         title: "Community Management",
         desc: "We respond, engage, and nurture your audience around the clock — building real relationships.",
+      },
+      {
+        icon: Star,
+        title: "Influencer & UGC",
+        desc: "We source and manage creator partnerships that bring authentic content and new audiences.",
+      },
+      {
+        icon: Target,
+        title: "Paid Social Boosting",
+        desc: "Strategic ad spend behind top-performing organic content to accelerate reach.",
       },
     ],
     platforms: [
@@ -175,6 +218,27 @@ const services = [
       { num: "85%", label: "Engagement rate uplift" },
       { num: "50+", label: "Brands managed" },
     ],
+    faqs: [
+      {
+        q: "How many platforms do you manage at once?",
+        a: "Most clients focus on 2–3 core platforms where their audience is most active, though we can scale to more.",
+      },
+      {
+        q: "Who creates the content?",
+        a: "Our in-house creative team handles shooting, editing, and copywriting — you just approve.",
+      },
+      {
+        q: "How is success measured?",
+        a: "We track growth, engagement rate, and — most importantly — leads and sales generated from social.",
+      },
+    ],
+    testimonial: {
+      quote:
+        "Engagement tripled in three months and we finally have a content calendar that runs itself.",
+      name: "Marcus Webb",
+      role: "Marketing Director",
+      company: "Fernwood Coffee",
+    },
     cta: "Let's grow your audience",
   },
   {
@@ -206,6 +270,16 @@ const services = [
         icon: Target,
         title: "Custom Integrations",
         desc: "Bespoke automations built around your exact stack — no generic templates, no wasted licenses.",
+      },
+      {
+        icon: CheckCircle,
+        title: "Error Handling & Alerts",
+        desc: "Automations that flag issues before they become problems, with built-in fallback logic.",
+      },
+      {
+        icon: Users,
+        title: "Team Training",
+        desc: "We walk your team through every workflow so they can manage and tweak automations confidently.",
       },
     ],
     platforms: [
@@ -243,6 +317,27 @@ const services = [
       { num: "24/7", label: "Always-on automation" },
       { num: "30+", label: "Workflows automated" },
     ],
+    faqs: [
+      {
+        q: "Which tools do you automate?",
+        a: "Anything with an API — CRMs, spreadsheets, email platforms, Slack, and custom internal tools.",
+      },
+      {
+        q: "Is my data secure?",
+        a: "Yes — all integrations use secure, authenticated connections and we never store data we don't need to.",
+      },
+      {
+        q: "What if our process changes later?",
+        a: "Automations are built modularly, so workflows can be adjusted or extended without starting over.",
+      },
+    ],
+    testimonial: {
+      quote:
+        "We got back 15 hours a week almost immediately — it felt like hiring a new employee.",
+      name: "Priya Nair",
+      role: "Operations Lead",
+      company: "Northline Logistics",
+    },
     cta: "Automate my business",
   },
   {
@@ -274,6 +369,16 @@ const services = [
         icon: RefreshCw,
         title: "Continuous Optimisation",
         desc: "Daily bid and budget adjustments, A/B testing, and creative refreshes to keep CPA falling.",
+      },
+      {
+        icon: Layers,
+        title: "Creative Testing",
+        desc: "Multiple ad variants tested simultaneously to find what truly resonates before scaling spend.",
+      },
+      {
+        icon: Monitor,
+        title: "Landing Page Alignment",
+        desc: "We make sure the page behind every ad matches the promise, so clicks actually convert.",
       },
     ],
     platforms: [
@@ -311,6 +416,26 @@ const services = [
       { num: "42%", label: "Lead growth (avg.)" },
       { num: "8 wks", label: "To measurable results" },
     ],
+    faqs: [
+      {
+        q: "What's the minimum ad budget?",
+        a: "We typically recommend starting from $1,500/month in ad spend to gather meaningful data, plus management fees.",
+      },
+      {
+        q: "Which platforms do you recommend?",
+        a: "It depends on your audience — we'll recommend the mix during the audit, not before.",
+      },
+      {
+        q: "How soon will we see results?",
+        a: "Early signal within 2–3 weeks; meaningful ROAS trends typically emerge by week 6–8.",
+      },
+    ],
+    testimonial: {
+      quote: "Our cost per lead dropped by 40% within the first month.",
+      name: "Diego Alvarez",
+      role: "CEO",
+      company: "Alvarez Home Services",
+    },
     cta: "Launch a campaign",
   },
 
@@ -344,6 +469,16 @@ const services = [
         icon: CheckCircle,
         title: "Human-in-the-Loop Controls",
         desc: "Approval steps and guardrails built in, so automation never runs fully unchecked.",
+      },
+      {
+        icon: Database,
+        title: "Custom Tool Access",
+        desc: "Agents can call your internal APIs, databases, and third-party tools securely and reliably.",
+      },
+      {
+        icon: BarChart2,
+        title: "Audit Trail & Logging",
+        desc: "Every agent action is logged, so you always know what happened and why.",
       },
     ],
     platforms: [
@@ -381,6 +516,27 @@ const services = [
       { num: "70%", label: "Faster task turnaround" },
       { num: "24/7", label: "Autonomous operation" },
     ],
+    faqs: [
+      {
+        q: "Is this different from a chatbot?",
+        a: "Yes — agents plan and execute multi-step tasks across tools, not just answer questions.",
+      },
+      {
+        q: "How much oversight do we have?",
+        a: "As much as you want — from full autonomy to approval required at every step.",
+      },
+      {
+        q: "What's a realistic first use case?",
+        a: "Most clients start with one high-volume, well-defined workflow, like lead qualification or report generation.",
+      },
+    ],
+    testimonial: {
+      quote:
+        "It handles research and first-draft replies that used to eat a whole afternoon.",
+      name: "Elena Volkov",
+      role: "Head of Ops",
+      company: "Fintra Advisors",
+    },
     cta: "Explore AI agents",
   },
   {
@@ -412,6 +568,16 @@ const services = [
         icon: BarChart2,
         title: "Reporting & Dashboards",
         desc: "Real-time business intelligence built directly into the system, not bolted on after.",
+      },
+      {
+        icon: RefreshCw,
+        title: "Data Migration",
+        desc: "We migrate your existing spreadsheets and legacy systems without losing historical data.",
+      },
+      {
+        icon: CheckCircle,
+        title: "Ongoing Maintenance",
+        desc: "Bug fixes, updates, and new modules added as your business needs evolve.",
       },
     ],
     platforms: [
@@ -449,6 +615,27 @@ const services = [
       { num: "40%", label: "Avg. process time saved" },
       { num: "99.9%", label: "Uptime target" },
     ],
+    faqs: [
+      {
+        q: "Can this replace our current spreadsheets?",
+        a: "Yes — that's usually the goal. We consolidate scattered tools into one connected system.",
+      },
+      {
+        q: "How long does implementation take?",
+        a: "Simple systems launch in 6–8 weeks; complex multi-module ERPs can take 3–6 months.",
+      },
+      {
+        q: "Do you provide training?",
+        a: "Yes, full onboarding and documentation are included for every team using the system.",
+      },
+    ],
+    testimonial: {
+      quote:
+        "We finally have one source of truth instead of five disconnected spreadsheets.",
+      name: "Tom Higgins",
+      role: "COO",
+      company: "Cascade Manufacturing",
+    },
     cta: "Build my system",
   },
   {
@@ -480,6 +667,16 @@ const services = [
         icon: RefreshCw,
         title: "Post-Launch Support",
         desc: "Updates, bug fixes, and new features rolled out long after launch day.",
+      },
+      {
+        icon: Bot,
+        title: "Push Notifications",
+        desc: "Smart, targeted notifications that bring users back without feeling spammy.",
+      },
+      {
+        icon: BarChart2,
+        title: "Analytics Integration",
+        desc: "Track installs, retention, and in-app behaviour from day one.",
       },
     ],
     platforms: [
@@ -517,6 +714,27 @@ const services = [
       { num: "4.6★", label: "Avg. store rating" },
       { num: "2", label: "Platforms, one codebase" },
     ],
+    faqs: [
+      {
+        q: "Native or cross-platform?",
+        a: "We default to cross-platform for cost efficiency, and go native when performance demands it.",
+      },
+      {
+        q: "Do you handle App Store submission?",
+        a: "Yes, from account setup to review responses — we manage the entire submission process.",
+      },
+      {
+        q: "What about updates after launch?",
+        a: "We offer ongoing support plans for bug fixes, OS updates, and new feature releases.",
+      },
+    ],
+    testimonial: {
+      quote:
+        "Launch went smoothly and our app has held a 4.7 star rating since day one.",
+      name: "Aisha Rahman",
+      role: "Product Lead",
+      company: "Fitloop",
+    },
     cta: "Build my app",
   },
   {
@@ -548,6 +766,16 @@ const services = [
         icon: BarChart2,
         title: "Sales Analytics",
         desc: "Clear dashboards on what's selling, what's not, and where to focus next.",
+      },
+      {
+        icon: Globe,
+        title: "Multi-Channel Selling",
+        desc: "Sync your store with Amazon, Instagram Shopping, and other marketplaces from one dashboard.",
+      },
+      {
+        icon: MessageCircle,
+        title: "Abandoned Cart Recovery",
+        desc: "Automated email and SMS flows that bring shoppers back to complete checkout.",
       },
     ],
     platforms: [
@@ -585,6 +813,27 @@ const services = [
       { num: "22%", label: "Avg. cart conversion lift" },
       { num: "<1.5s", label: "Target checkout load" },
     ],
+    faqs: [
+      {
+        q: "Which platform is best for us?",
+        a: "It depends on catalog size and complexity — we'll recommend Shopify, WooCommerce, or headless during the audit.",
+      },
+      {
+        q: "Can you migrate our existing store?",
+        a: "Yes, including products, customers, and order history, with minimal downtime.",
+      },
+      {
+        q: "Do you handle ongoing updates?",
+        a: "We offer maintenance plans for new collections, seasonal changes, and performance monitoring.",
+      },
+    ],
+    testimonial: {
+      quote:
+        "Checkout abandonment dropped noticeably in the first month after the redesign.",
+      name: "Grace Lin",
+      role: "Founder",
+      company: "Willow & Ash",
+    },
     cta: "Build my store",
   },
   {
@@ -616,6 +865,16 @@ const services = [
         icon: BarChart2,
         title: "Analytics & Strategy",
         desc: "Clear, unified reporting across every channel so decisions are backed by data.",
+      },
+      {
+        icon: MessageCircle,
+        title: "Content Marketing",
+        desc: "Blog posts, guides, and resources built to attract and convert organic traffic.",
+      },
+      {
+        icon: RefreshCw,
+        title: "Marketing Automation",
+        desc: "Lead nurture sequences and lifecycle campaigns that run without manual effort.",
       },
     ],
     platforms: [
@@ -653,6 +912,27 @@ const services = [
       { num: "3×", label: "Organic traffic growth" },
       { num: "8 wks", label: "To measurable results" },
     ],
+    faqs: [
+      {
+        q: "Do you handle both paid and organic?",
+        a: "Yes — we build integrated strategies across SEO, content, email, and paid channels.",
+      },
+      {
+        q: "How do you measure ROI?",
+        a: "Every channel is tied to a shared dashboard tracking leads, cost per acquisition, and revenue.",
+      },
+      {
+        q: "Is there a minimum contract length?",
+        a: "We recommend a 3-month minimum to see meaningful results, month-to-month after that.",
+      },
+    ],
+    testimonial: {
+      quote:
+        "Our organic traffic tripled and we finally know which channels actually drive revenue.",
+      name: "Ben Okafor",
+      role: "Marketing Manager",
+      company: "Greenline Supply",
+    },
     cta: "Grow my traffic",
   },
   {
@@ -684,6 +964,16 @@ const services = [
         icon: Layers,
         title: "Design Systems",
         desc: "Scalable Figma component libraries so your dev team ships faster and stays consistent.",
+      },
+      {
+        icon: CheckCircle,
+        title: "Accessibility Audits",
+        desc: "WCAG-compliant design so your product is usable by everyone, not just some users.",
+      },
+      {
+        icon: Code,
+        title: "Developer Handoff",
+        desc: "Clean specs, redlines, and component documentation that make engineering handoff painless.",
       },
     ],
     platforms: [
@@ -721,6 +1011,27 @@ const services = [
       { num: "40%", label: "Reduced user drop-off" },
       { num: "60+", label: "Products designed" },
     ],
+    faqs: [
+      {
+        q: "Do you design or build, or both?",
+        a: "We focus on design — research through developer handoff — and can partner with your dev team or ours.",
+      },
+      {
+        q: "What if we already have a partial design system?",
+        a: "We'll audit and extend what exists rather than starting from zero.",
+      },
+      {
+        q: "How many rounds of revisions are included?",
+        a: "Two structured revision rounds per phase, with async feedback in between.",
+      },
+    ],
+    testimonial: {
+      quote:
+        "Our drop-off rate dropped by 40% after the redesign — the difference was night and day.",
+      name: "Layla Haddad",
+      role: "Head of Product",
+      company: "Pulse Health",
+    },
     cta: "Design my product",
   },
   {
@@ -752,6 +1063,16 @@ const services = [
         icon: Figma,
         title: "Illustration & Iconography",
         desc: "Custom illustrations and icon sets that make your brand instantly recognizable.",
+      },
+      {
+        icon: Award,
+        title: "Packaging Design",
+        desc: "Shelf-ready packaging design that stands out and stays true to your brand.",
+      },
+      {
+        icon: Clock,
+        title: "Fast Revisions",
+        desc: "Quick turnaround on edits so campaigns never get held up waiting on assets.",
       },
     ],
     platforms: [
@@ -789,6 +1110,27 @@ const services = [
       { num: "100%", label: "Custom, on-brand work" },
       { num: "48 hr", label: "Avg. turnaround" },
     ],
+    faqs: [
+      {
+        q: "Do you offer full brand identity design?",
+        a: "Yes — logo, color, type, and full visual systems for new or refreshed brands.",
+      },
+      {
+        q: "What file formats do we receive?",
+        a: "All working and export files — AI, PSD, PNG, PDF — sized for every platform you need.",
+      },
+      {
+        q: "Can you match our existing brand guidelines?",
+        a: "Absolutely, or help formalize guidelines if you don't have any documented yet.",
+      },
+    ],
+    testimonial: {
+      quote:
+        "Every asset feels like it was made by the same team — because it finally is.",
+      name: "Noah Kim",
+      role: "Brand Manager",
+      company: "Solace Skincare",
+    },
     cta: "Start a design project",
   },
   {
@@ -820,6 +1162,16 @@ const services = [
         icon: BarChart2,
         title: "Rank Tracking & Reporting",
         desc: "Transparent monthly reports on rankings, traffic, and organic conversions.",
+      },
+      {
+        icon: Globe,
+        title: "Local SEO",
+        desc: "Google Business Profile optimisation and local citations that win map-pack rankings.",
+      },
+      {
+        icon: BarChart2,
+        title: "Competitor Analysis",
+        desc: "Ongoing tracking of competitor rankings and content gaps you can capitalize on.",
       },
     ],
     platforms: [
@@ -857,6 +1209,27 @@ const services = [
       { num: "top 3", label: "Avg. target ranking position" },
       { num: "6 mo", label: "To compounding results" },
     ],
+    faqs: [
+      {
+        q: "How long until we see results?",
+        a: "Early movement in 6–8 weeks; compounding, durable growth typically builds over 4–6 months.",
+      },
+      {
+        q: "Do you guarantee first-page rankings?",
+        a: "No one honestly can — we focus on sustainable growth, not shortcuts that risk penalties.",
+      },
+      {
+        q: "Do you write the content too?",
+        a: "Yes, our content team writes SEO-optimised pages and articles as part of the strategy.",
+      },
+    ],
+    testimonial: {
+      quote:
+        "We went from page 3 to page 1 for our top keywords in under five months.",
+      name: "Rachel Osei",
+      role: "Owner",
+      company: "Osei Law Group",
+    },
     cta: "Improve my rankings",
   },
 ];
@@ -873,9 +1246,13 @@ function useAnimateIn(dep) {
 
 export default function ServicePages({ defaultService }) {
   const [active, setActive] = useState(defaultService || "web");
+  const [openFaq, setOpenFaq] = useState(0);
   useEffect(() => {
     setActive(defaultService || "web");
   }, [defaultService]);
+  useEffect(() => {
+    setOpenFaq(0);
+  }, [active]);
   const service = services.find((s) => s.id === active) || services[0];
   const visible = useAnimateIn(active);
 
@@ -1198,7 +1575,7 @@ export default function ServicePages({ defaultService }) {
                 <div
                   key={i}
                   style={{
-                    ...fadeUp(i * 80),
+                    ...fadeUp(i * 70),
                     background: "#fff",
                     border: "1px solid #e6f6ff",
                     borderRadius: 16,
@@ -1416,8 +1793,179 @@ export default function ServicePages({ defaultService }) {
         </div>
       </section>
 
-      {/* ── Why MacaroniX ── */}
+      {/* ── Testimonial ── */}
+      <section style={{ padding: "72px 1.5rem", background: "#f6fbff" }}>
+        <div style={{ maxWidth: 780, margin: "0 auto", textAlign: "center" }}>
+          <div
+            style={{
+              width: 52,
+              height: 52,
+              background: "#e8f6fd",
+              borderRadius: 14,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              margin: "0 auto 24px",
+            }}
+          >
+            <Quote size={24} color={BRAND} />
+          </div>
+          <p
+            style={{
+              fontSize: "clamp(1.15rem, 2.4vw, 1.5rem)",
+              fontWeight: 600,
+              color: "#000",
+              lineHeight: 1.5,
+              marginBottom: 24,
+            }}
+          >
+            "{service.testimonial.quote}"
+          </p>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 10,
+            }}
+          >
+            <div
+              style={{
+                width: 40,
+                height: 40,
+                borderRadius: "50%",
+                background: `linear-gradient(135deg, ${BRAND_DARK}, ${BRAND})`,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#fff",
+                fontWeight: 700,
+                fontSize: 14,
+              }}
+            >
+              {service.testimonial.name.charAt(0)}
+            </div>
+            <div style={{ textAlign: "left" }}>
+              <div style={{ fontSize: 14, fontWeight: 700, color: "#000" }}>
+                {service.testimonial.name}
+              </div>
+              <div style={{ fontSize: 12.5, color: "#5a7686" }}>
+                {service.testimonial.role}, {service.testimonial.company}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
       <section style={{ padding: "72px 1.5rem", background: "#fff" }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 40 }}>
+            <div
+              style={{
+                display: "inline-block",
+                background: "#e8f6fd",
+                color: BRAND_DARK,
+                borderRadius: 999,
+                padding: "4px 16px",
+                fontSize: 12,
+                fontWeight: 700,
+                letterSpacing: 0.8,
+                textTransform: "uppercase",
+                marginBottom: 16,
+              }}
+            >
+              FAQ
+            </div>
+            <h2
+              style={{
+                fontSize: "clamp(1.6rem, 3.5vw, 2.2rem)",
+                fontWeight: 800,
+                color: "#000",
+                margin: 0,
+              }}
+            >
+              Common Questions
+            </h2>
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            {service.faqs.map((f, i) => {
+              const isOpen = openFaq === i;
+              return (
+                <div
+                  key={i}
+                  style={{
+                    border: `1px solid ${isOpen ? BRAND : "#e6f6ff"}`,
+                    borderRadius: 14,
+                    overflow: "hidden",
+                    transition: "border-color 0.2s",
+                  }}
+                >
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? -1 : i)}
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      gap: 16,
+                      padding: "16px 20px",
+                      background: isOpen ? "#e8f6fd" : "#fff",
+                      border: "none",
+                      cursor: "pointer",
+                      textAlign: "left",
+                      transition: "background 0.2s",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "0.95rem",
+                        fontWeight: 600,
+                        color: "#000",
+                      }}
+                    >
+                      {f.q}
+                    </span>
+                    <ChevronDown
+                      size={18}
+                      color={isOpen ? BRAND_DARK : "#888"}
+                      style={{
+                        flexShrink: 0,
+                        transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                        transition: "transform 0.2s",
+                      }}
+                    />
+                  </button>
+                  <div
+                    style={{
+                      maxHeight: isOpen ? 200 : 0,
+                      opacity: isOpen ? 1 : 0,
+                      overflow: "hidden",
+                      transition: "max-height 0.3s ease, opacity 0.25s ease",
+                    }}
+                  >
+                    <p
+                      style={{
+                        margin: 0,
+                        padding: "0 20px 18px",
+                        fontSize: "0.9rem",
+                        color: "#4a6478",
+                        lineHeight: 1.65,
+                      }}
+                    >
+                      {f.a}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Why MacaroniX ── */}
+      <section style={{ padding: "72px 1.5rem", background: "#f6fbff" }}>
         <div
           style={{
             maxWidth: 1100,
@@ -1474,7 +2022,7 @@ export default function ServicePages({ defaultService }) {
                     style={{
                       width: 36,
                       height: 36,
-                      background: "#e8f6fd",
+                      background: "#fff",
                       borderRadius: 10,
                       display: "flex",
                       alignItems: "center",

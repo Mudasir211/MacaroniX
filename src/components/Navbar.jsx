@@ -34,7 +34,7 @@ export default function Navbar() {
         <div className="md:hidden bg-white font-orbitron font-bold flex flex-col px-6  [&>*]:border-b  [&>*]:border-[#3ab7f0] py-4 gap-4 text-[#000000]">
           <Link className="hover:text-[#3ab7f0]" href="/">Home</Link>
           <Link href="/about" className="hover:text-[#3ab7f0]">About Us</Link>
-          <Link href="/#services" className="hover:text-[#3ab7f0]">Services</Link>
+          <Link href="/services" className="hover:text-[#3ab7f0]">Services</Link>
           <Link href="/#portfolio" className="hover:text-[#3ab7f0]">Portfolio</Link>
           <Link href="/contact" className="hover:text-[#3ab7f0]">Contact Us</Link>
         </div>
