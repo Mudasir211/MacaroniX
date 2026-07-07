@@ -20,7 +20,7 @@ export default function Navbar() {
         <div className="hidden md:flex gap-8 font-orbitron font-medium text-[#000000]">
             <Link className="hover:text-[#3ab7f0]" href="/">Home</Link>
           <Link href="/about" className="hover:text-[#3ab7f0]">About Us</Link>
-          <Link href="/#services" className="hover:text-[#3ab7f0]">Services</Link>
+          <Link href="/services" className="hover:text-[#3ab7f0]">Services</Link>
           <Link href="/#portfolio" className="hover:text-[#3ab7f0]">Portfolio</Link>
           <Link href="/contact" className="hover:text-[#3ab7f0]">Contact Us</Link>
         </div>
