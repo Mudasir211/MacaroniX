@@ -128,14 +128,14 @@ export default function ContactSection() {
 
             <div className="flex justify-center md:justify-start space-x-5 mt-6">
               <Link
-                href="https://instagram.com"
+                href="https://www.instagram.com/macaroni._.x?igsh=c3pnbXh6eGIyM3c5"
                 target="_blank"
                 className="p-3 rounded-full bg-[#3ab7f0]/10 hover:bg-[#3ab7f0]/30 transition"
               >
                 <FaInstagram size={20} className="text-[#3ab7f0]" />
               </Link>
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/macaroni-x/"
                 target="_blank"
                 className="p-3 rounded-full bg-[#3ab7f0]/10 hover:bg-[#3ab7f0]/30 transition"
               >

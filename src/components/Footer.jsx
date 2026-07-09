@@ -66,7 +66,7 @@ export default function Footer() {
               <FaFacebookF size={20} />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/macaroni._.x?igsh=c3pnbXh6eGIyM3c5"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-black transition"
@@ -74,7 +74,7 @@ export default function Footer() {
               <FaInstagram size={20} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/macaroni-x/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-black transition"

@@ -178,10 +178,10 @@ export default function ContactPage() {
           Follow us for daily insights, behind-the-scenes, and creative inspiration.
         </p>
         <div className="flex justify-center gap-6 text-2xl">
-          <a href="https://instagram.com/macaronix" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/macaroni._.x?igsh=c3pnbXh6eGIyM3c5" target="_blank" rel="noopener noreferrer">
             <FaInstagram className="hover:scale-110 transition" />
           </a>
-          <a href="https://linkedin.com/company/macaronix" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/company/macaroni-x/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin className="hover:scale-110 transition" />
           </a>
           <a href="mailto:hello@macaronix.com">

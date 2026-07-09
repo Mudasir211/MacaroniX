@@ -20,7 +20,7 @@ const projectsData = [
     id: 1,
     title: "Corporate Website",
     category: "Web",
-    img: "https://source.unsplash.com/1200x800/?corporate,website",
+    img: "/natura.jpg",
     short: "Modern corporate site focused on conversion & performance.",
     details:
       "Designed and built a fast, accessible website with a modular CMS and analytics-first approach. Result: +42% in qualified leads within 3 months.",
@@ -39,8 +39,8 @@ const projectsData = [
   {
     id: 3,
     title: "Logo & Identity",
-    category: "Design",
-    img: "https://source.unsplash.com/1200x800/?logo,branding",
+    category: "Web",
+    img: "/",
     short: "Identity system and brand guidelines for a fintech startup.",
     details:
       "Created a scalable identity, component library, and brand book. Enabled cohesive product and marketing experiences across channels.",
@@ -49,8 +49,8 @@ const projectsData = [
   {
     id: 4,
     title: "Performance Marketing Campaign",
-    category: "Marketing",
-    img: "https://source.unsplash.com/1200x800/?marketing,campaign",
+    category: "Web",
+    img: "/bigbys.png",
     short: "Full-funnel acquisition for e-commerce scale-up.",
     details:
       "Strategy + creative + media buying. Optimized ads and landing funnels — ROAS improved by 3.8x in 8 weeks.",
@@ -60,7 +60,7 @@ const projectsData = [
     id: 5,
     title: "Product Landing Page",
     category: "Web",
-    img: "https://source.unsplash.com/1200x800/?landing,page",
+    img: "/kiddylearno.jpg",
     short: "High-converting product landing that communicates value quickly.",
     details:
       "A/B tested copy and micro-animations; improved conversion by 28% vs previous design.",
