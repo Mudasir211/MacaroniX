@@ -1,5 +1,6 @@
 "use client";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { FaQuoteLeft } from "react-icons/fa";
 
@@ -22,7 +23,26 @@ const word = {
   },
 };
 
+// Rotating quotes shown at the base of the hero — each tied to a service MacaroniX offers
+const quotes = [
+  "Blending human creativity with futuristic technology, MacaroniX redefines how brands live and grow online.",
+  "A website is a first impression that never sleeps — we build ones worth remembering.",
+  "Great automation doesn't replace your team, it gives them their time back.",
+  "The best ad isn't the loudest one, it's the one that speaks to the right person.",
+  "Design is the quiet difference between a brand people notice and one they trust.",
+  "Rankings follow relevance — we build sites search engines and people both believe in.",
+];
+
 export default function Hero() {
+  const [quoteIndex, setQuoteIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setQuoteIndex((prev) => (prev + 1) % quotes.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="flex pt-24 flex-col justify-center items-center text-center min-h-screen relative overflow-hidden text-white">
       {/* Animated background image — slow continuous Ken Burns zoom/pan (transform-only, GPU friendly) */}
@@ -132,14 +152,87 @@ export default function Hero() {
           animate="show"
           className="text-4xl sm:text-5xl font-orbitron md:text-7xl font-extrabold leading-tight flex flex-wrap justify-center gap-x-4"
         >
-          {headingWords.map((w, i) => (
-            <motion.span key={i} variants={word}>
-              {w}
+          {/* "Shaping the Future of" — base text plus a sweeping light overlay */}
+          <span className="relative inline-flex flex-wrap justify-center gap-x-4">
+            {headingWords.map((w, i) => (
+              <motion.span key={i} variants={word}>
+                {w}
+              </motion.span>
+            ))}
+
+            {/* Sweeping glow overlay: same words, gradient-clipped, animated left-right-left */}
+            <motion.span
+              aria-hidden
+              className="absolute inset-0 flex flex-wrap justify-center gap-x-4 pointer-events-none select-none"
+              style={{
+                backgroundImage:
+                  "linear-gradient(100deg, transparent 25%, rgba(255,255,255,0.85) 45%, #3ab7f0 50%, rgba(255,255,255,0.85) 55%, transparent 75%)",
+                backgroundSize: "300% 100%",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+                filter: "drop-shadow(0 0 14px rgba(58,183,240,0.75))",
+                willChange: "background-position",
+              }}
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                backgroundPosition: ["220% 0%", "-80% 0%", "220% 0%"],
+              }}
+              transition={{
+                opacity: { duration: 0.6, delay: 1.6 },
+                backgroundPosition: {
+                  duration: 7,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1.6,
+                },
+              }}
+            >
+              {headingWords.map((w, i) => (
+                <span key={i}>{w}</span>
+              ))}
             </motion.span>
-          ))}
-          <motion.span variants={word} style={{ color: "#000000" }}>
-            Digital Presence
-          </motion.span>
+          </span>
+
+          {/* "Digital Presence" — same sweeping-light treatment, offset so the two lights
+              don't move in lockstep with the "Shaping the Future of" sweep above */}
+          <span className="relative inline-flex">
+            <motion.span variants={word} style={{ color: "#000000" }}>
+              Digital Presence
+            </motion.span>
+
+            <motion.span
+              aria-hidden
+              className="absolute inset-0 pointer-events-none select-none"
+              style={{
+                backgroundImage:
+                  "linear-gradient(100deg, transparent 25%, rgba(255,255,255,0.9) 45%, #3ab7f0 50%, rgba(255,255,255,0.9) 55%, transparent 75%)",
+                backgroundSize: "300% 100%",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+                filter: "drop-shadow(0 0 14px rgba(58,183,240,0.75))",
+                willChange: "background-position",
+              }}
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                backgroundPosition: ["-80% 0%", "220% 0%", "-80% 0%"],
+              }}
+              transition={{
+                opacity: { duration: 0.6, delay: 3.4 },
+                backgroundPosition: {
+                  duration: 7,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 3.4,
+                },
+              }}
+            >
+              Digital Presence
+            </motion.span>
+          </span>
         </motion.h1>
 
         <motion.p
@@ -188,21 +281,58 @@ export default function Hero() {
         </motion.a>
       </div>
 
-      {/* Bottom tagline styled as a quote */}
+      {/* Bottom tagline — rotating quotes, styled as a quote, cross-fading with a soft blur/slide */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.4, duration: 1 }}
         className="relative z-10 mt-12 px-8 sm:px-10 max-w-3xl mx-auto"
       >
-        <FaQuoteLeft
-          className="mx-auto mb-3 text-white/40"
-          size={22}
-        />
-        <p className="italic font-medium text-sm sm:text-base md:text-2xl text-white/85 leading-relaxed">
-          Blending human creativity with futuristic technology, MacaroniX
-          redefines how brands live and grow online.
-        </p>
+        <motion.div
+          animate={{ opacity: [0.3, 1, 0.3] }}
+          transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <FaQuoteLeft className="mx-auto mb-3 text-white/40" size={22} />
+        </motion.div>
+
+        <div className="relative min-h-[3.5rem] sm:min-h-[4.5rem] flex items-center justify-center">
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={quoteIndex}
+              initial={{ opacity: 0, y: 16, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: -16, filter: "blur(8px)" }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="italic font-medium text-sm sm:text-base md:text-2xl text-white/85 leading-relaxed"
+            >
+              {quotes[quoteIndex]}
+            </motion.p>
+          </AnimatePresence>
+        </div>
+
+        {/* progress dots so the rotation feels intentional, not accidental */}
+        <div className="flex items-center justify-center gap-2 mt-5">
+          {quotes.map((_, i) => (
+            <button
+              key={i}
+              aria-label={`Show quote ${i + 1}`}
+              onClick={() => setQuoteIndex(i)}
+              className="relative h-1.5 rounded-full overflow-hidden bg-white/20 transition-all duration-300"
+              style={{ width: i === quoteIndex ? 22 : 6 }}
+            >
+              {i === quoteIndex && (
+                <motion.span
+                  key={quoteIndex}
+                  className="absolute inset-0 bg-white/90"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 4.5, ease: "linear" }}
+                  style={{ originX: 0 }}
+                />
+              )}
+            </button>
+          ))}
+        </div>
       </motion.div>
     </section>
   );

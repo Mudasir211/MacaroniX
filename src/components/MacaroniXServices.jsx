@@ -191,6 +191,20 @@ const services = [
       "X / Twitter",
       "YouTube",
     ],
+    screenshots: [
+      {
+        img: "/meta-ads-manager.jpg",
+        caption: "A live Meta Ads Manager account we run — active campaigns, budgets, and cost per website enquiry.",
+      },
+      {
+        img: "/social-ads-performance.jpg",
+        caption: "Creative-level performance tracking so we know exactly which post or ad is earning its spend.",
+      },
+      {
+        img: "/meta-roas-dashboard.jpg",
+        caption: "Spend, reach, and ROAS tracked month over month across every placement.",
+      },
+    ],
     process: [
       {
         step: "01",
@@ -588,6 +602,33 @@ const services = [
       "API Integrations",
       "Cloud Hosting",
     ],
+    examples: [
+      {
+        icon: Layers,
+        title: "Listing Generator",
+        desc: "Turns raw product or property data into ready-to-publish listings automatically, cutting hours of manual entry down to minutes.",
+      },
+      {
+        icon: Image,
+        title: "Pet Portraits Order Manager",
+        desc: "Tracks custom art orders end to end — request, artist assignment, revisions, and delivery — in one shared dashboard.",
+      },
+      {
+        icon: MessageCircle,
+        title: "Meeting Minutes Recorder",
+        desc: "Records and transcribes meetings automatically into organized, shareable summaries no one has to type up by hand.",
+      },
+      {
+        icon: Users,
+        title: "Employee Monitoring App",
+        desc: "Tracks activity, time, and productivity across a distributed team, with clear reporting for managers.",
+      },
+      {
+        icon: Monitor,
+        title: "RDP Manager",
+        desc: "A single dashboard for organizing, launching, and monitoring multiple remote desktop connections at once.",
+      },
+    ],
     process: [
       {
         step: "01",
@@ -884,6 +925,16 @@ const services = [
       "Analytics",
       "CRO",
       "Landing Pages",
+    ],
+    screenshots: [
+      {
+        img: "/facebook-ads-dashboard.jpg",
+        caption: "Consolidated paid social reporting — impressions, CPC, CPM, and CTR in one view.",
+      },
+      {
+        img: "/traffic-revenue-dashboard.jpg",
+        caption: "Multi-channel traffic and revenue breakdown across email, organic, and paid — so budget follows what actually works.",
+      },
     ],
     process: [
       {
@@ -1679,6 +1730,198 @@ export default function ServicePages({ defaultService }) {
           </div>
         </div>
       </section>
+
+      {/* ── Example Builds (only for services that define them, e.g. Custom Software & ERP) ── */}
+      {service.examples && (
+        <section style={{ padding: "72px 1.5rem", background: "#fff" }}>
+          <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+            <div style={{ textAlign: "center", marginBottom: 48 }}>
+              <div
+                style={{
+                  display: "inline-block",
+                  background: "#e8f6fd",
+                  color: BRAND_DARK,
+                  borderRadius: 999,
+                  padding: "4px 16px",
+                  fontSize: 12,
+                  fontWeight: 700,
+                  letterSpacing: 0.8,
+                  textTransform: "uppercase",
+                  marginBottom: 16,
+                }}
+              >
+                Real builds
+              </div>
+              <h2
+                style={{
+                  fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
+                  fontWeight: 800,
+                  color: "#000",
+                  margin: 0,
+                }}
+              >
+                Custom Software We've Shipped
+              </h2>
+            </div>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+                gap: 20,
+              }}
+            >
+              {service.examples.map((ex, i) => {
+                const EIcon = ex.icon;
+                return (
+                  <div
+                    key={i}
+                    style={{
+                      background: "#f6fbff",
+                      border: "1px solid #e6f6ff",
+                      borderRadius: 16,
+                      padding: "28px 24px",
+                      transition: "box-shadow 0.25s, transform 0.25s",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.boxShadow =
+                        "0 8px 32px rgba(58,183,240,0.18)";
+                      e.currentTarget.style.transform = "translateY(-4px)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.boxShadow = "none";
+                      e.currentTarget.style.transform = "translateY(0)";
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: 44,
+                        height: 44,
+                        background: "#fff",
+                        border: `1px solid ${BRAND}33`,
+                        borderRadius: 12,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        marginBottom: 16,
+                      }}
+                    >
+                      <EIcon size={20} color={BRAND} />
+                    </div>
+                    <h3
+                      style={{
+                        fontSize: "1.05rem",
+                        fontWeight: 700,
+                        color: "#000",
+                        marginBottom: 8,
+                      }}
+                    >
+                      {ex.title}
+                    </h3>
+                    <p
+                      style={{
+                        fontSize: "0.9rem",
+                        color: "#4a6478",
+                        lineHeight: 1.65,
+                        margin: 0,
+                      }}
+                    >
+                      {ex.desc}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Screenshots / Results (only for services that define them, e.g. Social & Digital Marketing) ── */}
+      {service.screenshots && (
+        <section style={{ padding: "72px 1.5rem", background: "#f6fbff" }}>
+          <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+            <div style={{ textAlign: "center", marginBottom: 48 }}>
+              <div
+                style={{
+                  display: "inline-block",
+                  background: "#fff",
+                  color: BRAND_DARK,
+                  borderRadius: 999,
+                  padding: "4px 16px",
+                  fontSize: 12,
+                  fontWeight: 700,
+                  letterSpacing: 0.8,
+                  textTransform: "uppercase",
+                  marginBottom: 16,
+                  border: `1px solid ${BRAND}33`,
+                }}
+              >
+                Real numbers
+              </div>
+              <h2
+                style={{
+                  fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
+                  fontWeight: 800,
+                  color: "#000",
+                  margin: 0,
+                }}
+              >
+                Straight From Our Dashboards
+              </h2>
+            </div>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                gap: 20,
+              }}
+            >
+              {service.screenshots.map((s, i) => (
+                <div
+                  key={i}
+                  style={{
+                    background: "#fff",
+                    border: "1px solid #e6f6ff",
+                    borderRadius: 16,
+                    overflow: "hidden",
+                    boxShadow: "0 4px 20px rgba(58,183,240,0.06)",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "100%",
+                      aspectRatio: "16 / 10",
+                      background: "#0b1520",
+                    }}
+                  >
+                    <img
+                      src={s.img}
+                      alt={s.caption}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                  <p
+                    style={{
+                      margin: 0,
+                      padding: "16px 18px",
+                      fontSize: "0.85rem",
+                      color: "#4a6478",
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {s.caption}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── Process ── */}
       <section style={{ padding: "72px 1.5rem", background: "#000" }}>
