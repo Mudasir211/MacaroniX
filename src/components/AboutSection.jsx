@@ -147,9 +147,9 @@ export default function AboutSection() {
       <div className="py-12 px-6 md:px-20 bg-[#0b1220] text-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
           {[
-            { num: "150+", label: "Projects Delivered" },
+            { num: "10+", label: "Projects Delivered" },
             { num: "90%", label: "Average Growth Rate" },
-            { num: "50+", label: "Happy Clients" },
+            { num: "10+", label: "Happy Clients" },
           ].map((s, i) => (
             <motion.div
               key={i}
@@ -169,60 +169,7 @@ export default function AboutSection() {
 
       {/* Team Highlights */}
     {/* Team Highlights */}
-<div className="py-16 px-6 md:px-20 bg-[#0b1220]">
-  <div className="max-w-6xl mx-auto text-center mb-12">
-    <h3 className="text-3xl font-bold" style={{ color: "#3ab7f0" }}>
-      Meet the Team
-    </h3>
-    <p className="text-gray-400 mt-3">A small, full-stack team of creatives and engineers.</p>
-  </div>
 
-  <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    {[
-      { name: "Mukarram Shafi", role: "Creative Director", skills: ["Brand Strategy", "Art Direction", "Visual Identity"], color: "#3ab7f0", initials: "MS" },
-      { name: "Mudsasir Ahmed", role: "Lead Developer", skills: ["Next.js", "React", "Full Stack"], color: "#0073b6", initials: "MA" },
-      { name: "Uzair Ahmed", role: "Video Editor", skills: ["Motion Graphics", "Color Grading", "Reels"], color: "#3ab7f0", initials: "UA" },
-    ].map((m, i) => (
-      <motion.div
-        key={i}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: i * 0.12, duration: 0.5 }}
-        className="rounded-2xl p-6 border border-[#3ab7f0]/20 bg-[#101826] hover:border-[#3ab7f0]/60 hover:shadow-[0_0_28px_rgba(58,183,240,0.15)] transition-all duration-300"
-      >
-        {/* Avatar */}
-        <div className="flex items-center gap-4 mb-5">
-          <div
-            className="w-14 h-14 rounded-xl flex items-center justify-center text-lg font-bold flex-shrink-0"
-            style={{ background: `${m.color}18`, border: `1.5px solid ${m.color}55`, color: m.color }}
-          >
-            {m.initials}
-          </div>
-          <div className="text-left">
-            <div className="text-white font-semibold text-base">{m.name}</div>
-            <div className="text-sm font-medium" style={{ color: m.color }}>{m.role}</div>
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="h-px bg-[#3ab7f0]/10 mb-5" />
-
-        {/* Skills */}
-        <div className="flex flex-wrap gap-2">
-          {m.skills.map((skill) => (
-            <span
-              key={skill}
-              className="text-xs font-medium px-3 py-1 rounded-full"
-              style={{ background: "#3ab7f018", color: "#7dcfef", border: "1px solid #3ab7f022" }}
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </motion.div>
-    ))}
-  </div>
-</div>
 
       {/* Mini FAQ */}
       <div className="py-12 px-6 md:px-20 bg-[#f6fbff]">

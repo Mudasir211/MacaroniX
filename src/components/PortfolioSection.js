@@ -33,7 +33,7 @@ const projectsData = [
     title: "HVAC & Plumbing — Territory Expansion Ad",
     category: "Video",
     img: "/vidpic1.png",
-    link: "#",
+    link: "/vid1.mp4",
     short:
       "Vertical talking-head ad for a plumbing & HVAC tech expanding into new territory.",
     details:
@@ -78,7 +78,7 @@ const projectsData = [
     title: "Streetwear Drop — Product Reveal",
     category: "Video",
     img: "/vidpic2.png",
-    link: "#",
+    link: "/vid2.mp4",
     short: "Moody, back-turned product reveal for a streetwear graphic tee.",
     details:
       "Filmed in a saturated blue-lit studio, the model turns his back to camera to slowly reveal a bold graphic print across the shirt. We leaned into the lighting and a slow reveal pace to give the drop a cinematic, almost music-video feel — built for a brand that wants its merch to look collectible, not just wearable.",
@@ -89,7 +89,7 @@ const projectsData = [
     title: "Grok Build — Product Launch",
     category: "Video",
     img: "/vidpic3.png",
-    link: "#",
+    link: "/vid3.mp4",
     short: "Framed announcement edit for the Grok Build coding agent CLI.",
     details:
       "A relaxed, at-home talking-head clip announcing a new coding agent tool, which we placed inside a rounded, bordered frame over a deep blue backdrop with a bold 'Grok Build — Just Dropped' title card. The framing device turns a simple phone-shot announcement into something that reads as a polished product launch rather than a casual update.",
@@ -100,7 +100,7 @@ const projectsData = [
     title: "Skin Analysis — Dermatology Clinic",
     category: "Video",
     img: "/vidpic4.png",
-    link: "#",
+    link: "/vid4.mp4",
     short:
       "In-clinic walkthrough of a dermatology studio's skin-analysis machine.",
     details:
@@ -112,7 +112,7 @@ const projectsData = [
     title: "Appliance Repair — Marketing Comeback",
     category: "Video",
     img: "/vidpic5.png",
-    link: "#",
+    link: "/vid5.mp4",
     short:
       "Founder story ad for an appliance repair business, told in his own words.",
     details:
@@ -121,8 +121,11 @@ const projectsData = [
   },
 ];
 
-export default function PortfolioSection() {
-  const [filter, setFilter] = useState(ALL_TAG);
+export default function PortfolioSection({
+  initialFilter = ALL_TAG,
+  compact = false,
+}) {
+  const [filter, setFilter] = useState(initialFilter);
   const [modal, setModal] = useState(null); // project object or null
 
   const tags = useMemo(() => {
@@ -142,10 +145,15 @@ export default function PortfolioSection() {
   return (
     <section
       id="portfolio"
-      className="py-24 px-6 md:px-20 bg-[#ffffff] text-center text-[#000000]"
+      className={`${
+        compact ? "py-16 md:py-20" : "py-24"
+      } px-6 md:px-20 bg-[#ffffff] text-center text-[#000000]`}
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-4" style={{ color: "#3ab7f0" }}>
+        <h2
+          className={`${compact ? "text-3xl" : "text-4xl"} font-bold mb-4`}
+          style={{ color: "#3ab7f0" }}
+        >
           Our Work
         </h2>
         <p className="mb-8 text-gray-700 max-w-2xl mx-auto">
@@ -249,7 +257,7 @@ export default function PortfolioSection() {
                         }}
                       >
                         <FaExternalLinkAlt size={9} />{" "}
-                        {p.category === "Video" ? "Preview" : "Live"}
+                        {p.category === "Video" ? "Watch" : "Live"}
                       </span>
                     )}
                   </div>
@@ -303,11 +311,21 @@ export default function PortfolioSection() {
                   className="w-full h-80 md:h-[600px] flex items-center justify-center"
                   style={{ background: "#0b0f14" }}
                 >
-                  <img
-                    src={modal.img}
-                    alt={modal.title}
-                    className="w-full h-full object-contain"
-                  />
+                  {modal.category === "Video" ? (
+                    <video
+                      key={modal.link}
+                      src={modal.link}
+                      poster={modal.img}
+                      controls
+                      className="w-full h-full object-contain"
+                    />
+                  ) : (
+                    <img
+                      src={modal.img}
+                      alt={modal.title}
+                      className="w-full h-full object-contain"
+                    />
+                  )}
                 </div>
                 <div className="p-6 md:h-[600px] md:overflow-y-auto flex flex-col justify-center">
                   <div className="text-sm text-[#3ab7f0] font-semibold mb-2">
@@ -348,34 +366,26 @@ export default function PortfolioSection() {
                       </a>
                     )}
                     {modal.link && modal.category === "Video" && (
-                      <span
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full font-semibold cursor-not-allowed"
+                      <a
+                        href={modal.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full font-semibold"
                         style={{
-                          background: "#f3fbff",
-                          color: "#7a94a3",
-                          border: "1px solid #def6ff",
+                          background: "#3ab7f0",
+                          color: "#000000",
                         }}
-                        title="Video link coming soon"
                       >
-                        Watch Video (Coming Soon)
-                      </span>
+                        Open Full Video <FaExternalLinkAlt size={11} />
+                      </a>
                     )}
                     <a
                       href="#contact"
                       className="inline-block px-4 py-2 rounded-full font-semibold"
                       style={{
-                        background:
-                          modal.link && modal.category !== "Video"
-                            ? "#f3fbff"
-                            : "#3ab7f0",
-                        color:
-                          modal.link && modal.category !== "Video"
-                            ? "#004f6f"
-                            : "#000000",
-                        border:
-                          modal.link && modal.category !== "Video"
-                            ? "1px solid #def6ff"
-                            : "none",
+                        background: "#f3fbff",
+                        color: "#004f6f",
+                        border: "1px solid #def6ff",
                       }}
                     >
                       Discuss a Project

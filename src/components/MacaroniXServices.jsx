@@ -37,9 +37,26 @@ import {
   Quote,
 } from "lucide-react";
 import Link from "next/link";
+import PortfolioSection from "./PortfolioSection";
 
 const BRAND = "#3ab7f0";
 const BRAND_DARK = "#0073b6";
+
+// Which portfolio category best supports each service — used to pre-filter
+// the embedded portfolio so visitors see the most relevant proof first.
+// Falls back to "All" for services without a clean match.
+const PORTFOLIO_FILTER_BY_SERVICE = {
+  web: "Web",
+  uiux: "Web",
+  ecommerce: "Web",
+  erp: "Web",
+  mobile: "Web",
+  "agentic-ai": "Web",
+  "ai-automation": "Web",
+  social: "Video",
+  ads: "Video",
+  "digital-marketing": "Video",
+};
 
 const services = [
   // ── TOP 4 ──
@@ -61,7 +78,7 @@ const services = [
       {
         icon: Code,
         title: "Modern Stack",
-        desc: "Next.js, React, and headless CMS solutions that scale with your business without re-platforming.",
+        desc: "Next.js, React, Node.js, and MongoDB — built fully from scratch, custom code end to end, no page builders or CMS locking you in.",
       },
       {
         icon: Palette,
@@ -87,10 +104,10 @@ const services = [
     platforms: [
       "Next.js",
       "React",
-      "WordPress",
-      "Webflow",
-      "Shopify",
-      "Custom CMS",
+      "Node.js / Express",
+      "MongoDB",
+      "Redux Toolkit",
+      "REST / GraphQL APIs",
     ],
     process: [
       {
@@ -117,7 +134,7 @@ const services = [
     stats: [
       { num: "<2s", label: "Target page load time" },
       { num: "90+", label: "Lighthouse score" },
-      { num: "80+", label: "Sites shipped" },
+      { num: "10+", label: "Sites shipped" },
     ],
     faqs: [
       {
@@ -228,9 +245,9 @@ const services = [
       },
     ],
     stats: [
-      { num: "3×", label: "Average follower growth" },
-      { num: "85%", label: "Engagement rate uplift" },
-      { num: "50+", label: "Brands managed" },
+      { num: "3×", label: "Target follower growth" },
+      { num: "85%", label: "Target engagement uplift" },
+      { num: "8+", label: "Brands managed" },
     ],
     faqs: [
       {
@@ -327,9 +344,9 @@ const services = [
       },
     ],
     stats: [
-      { num: "15+ hrs", label: "Saved per week (avg.)" },
+      { num: "15+ hrs", label: "Saved per week" },
       { num: "24/7", label: "Always-on automation" },
-      { num: "30+", label: "Workflows automated" },
+      { num: "10+", label: "Workflows automated" },
     ],
     faqs: [
       {
@@ -426,8 +443,8 @@ const services = [
       },
     ],
     stats: [
-      { num: "3.8×", label: "Average ROAS" },
-      { num: "42%", label: "Lead growth (avg.)" },
+      { num: "3.8×", label: "Target ROAS" },
+      { num: "42%", label: "Target lead growth" },
       { num: "8 wks", label: "To measurable results" },
     ],
     faqs: [
@@ -526,7 +543,7 @@ const services = [
       },
     ],
     stats: [
-      { num: "10+", label: "Agent workflows shipped" },
+      { num: "5+", label: "Agent workflows shipped" },
       { num: "70%", label: "Faster task turnaround" },
       { num: "24/7", label: "Autonomous operation" },
     ],
@@ -652,8 +669,8 @@ const services = [
       },
     ],
     stats: [
-      { num: "20+", label: "Custom systems built" },
-      { num: "40%", label: "Avg. process time saved" },
+      { num: "6+", label: "Custom systems built" },
+      { num: "40%", label: "Target process time saved" },
       { num: "99.9%", label: "Uptime target" },
     ],
     faqs: [
@@ -751,8 +768,8 @@ const services = [
       },
     ],
     stats: [
-      { num: "25+", label: "Apps launched" },
-      { num: "4.6★", label: "Avg. store rating" },
+      { num: "5+", label: "Apps launched" },
+      { num: "4.5★+", label: "Target store rating" },
       { num: "2", label: "Platforms, one codebase" },
     ],
     faqs: [
@@ -791,7 +808,7 @@ const services = [
       {
         icon: ShoppingCart,
         title: "Store Setup & Design",
-        desc: "Custom storefronts on Shopify or headless commerce, styled to match your brand exactly.",
+        desc: "Fully custom storefronts built from scratch with Next.js and the MERN stack — no page-builder templates, styled to match your brand exactly.",
       },
       {
         icon: Zap,
@@ -820,12 +837,12 @@ const services = [
       },
     ],
     platforms: [
-      "Shopify",
-      "WooCommerce",
-      "Headless Commerce",
-      "Payment Gateways",
-      "Inventory Tools",
-      "Marketplace Sync",
+      "Next.js",
+      "MERN Stack",
+      "Redux Toolkit",
+      "Stripe / Payment APIs",
+      "Custom Admin Dashboard",
+      "Cloud Hosting",
     ],
     process: [
       {
@@ -850,14 +867,14 @@ const services = [
       },
     ],
     stats: [
-      { num: "30+", label: "Stores launched" },
-      { num: "22%", label: "Avg. cart conversion lift" },
+      { num: "6+", label: "Stores launched" },
+      { num: "22%", label: "Target cart conversion lift" },
       { num: "<1.5s", label: "Target checkout load" },
     ],
     faqs: [
       {
-        q: "Which platform is best for us?",
-        a: "It depends on catalog size and complexity — we'll recommend Shopify, WooCommerce, or headless during the audit.",
+        q: "Do you build on Shopify or WooCommerce?",
+        a: "No — everything we build is custom-coded from scratch with Next.js and the MERN stack, so you're never boxed in by a page builder's templates or paying monthly platform fees for features we can just build in.",
       },
       {
         q: "Can you migrate our existing store?",
@@ -959,8 +976,8 @@ const services = [
       },
     ],
     stats: [
-      { num: "42%", label: "Avg. lead growth" },
-      { num: "3×", label: "Organic traffic growth" },
+      { num: "42%", label: "Target lead growth" },
+      { num: "3×", label: "Target organic traffic growth" },
       { num: "8 wks", label: "To measurable results" },
     ],
     faqs: [
@@ -1058,9 +1075,9 @@ const services = [
       },
     ],
     stats: [
-      { num: "28%", label: "Avg. conversion uplift" },
-      { num: "40%", label: "Reduced user drop-off" },
-      { num: "60+", label: "Products designed" },
+      { num: "28%", label: "Target conversion uplift" },
+      { num: "40%", label: "Target drop-off reduction" },
+      { num: "10+", label: "Products designed" },
     ],
     faqs: [
       {
@@ -1157,7 +1174,7 @@ const services = [
       },
     ],
     stats: [
-      { num: "500+", label: "Designs delivered" },
+      { num: "50+", label: "Designs delivered" },
       { num: "100%", label: "Custom, on-brand work" },
       { num: "48 hr", label: "Avg. turnaround" },
     ],
@@ -1256,8 +1273,8 @@ const services = [
       },
     ],
     stats: [
-      { num: "3×", label: "Avg. organic traffic growth" },
-      { num: "top 3", label: "Avg. target ranking position" },
+      { num: "3×", label: "Target organic traffic growth" },
+      { num: "top 3", label: "Target ranking position" },
       { num: "6 mo", label: "To compounding results" },
     ],
     faqs: [
@@ -1685,7 +1702,14 @@ export default function ServicePages({ defaultService }) {
           </div>
         </div>
       </section>
-
+   {/* ── Portfolio — always visible, pre-filtered to whatever's most relevant to this service ── */}
+      <div style={{ borderTop: "1px solid #e8f6fd" }}>
+        <PortfolioSection
+          key={active}
+          initialFilter={PORTFOLIO_FILTER_BY_SERVICE[service.id] || "All"}
+          compact
+        />
+      </div>
       {/* ── Platforms / Deliverables ── */}
       <section style={{ padding: "56px 1.5rem", background: "#f6fbff" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center" }}>
@@ -2036,69 +2060,7 @@ export default function ServicePages({ defaultService }) {
         </div>
       </section>
 
-      {/* ── Testimonial ── */}
-      <section style={{ padding: "72px 1.5rem", background: "#f6fbff" }}>
-        <div style={{ maxWidth: 780, margin: "0 auto", textAlign: "center" }}>
-          <div
-            style={{
-              width: 52,
-              height: 52,
-              background: "#e8f6fd",
-              borderRadius: 14,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              margin: "0 auto 24px",
-            }}
-          >
-            <Quote size={24} color={BRAND} />
-          </div>
-          <p
-            style={{
-              fontSize: "clamp(1.15rem, 2.4vw, 1.5rem)",
-              fontWeight: 600,
-              color: "#000",
-              lineHeight: 1.5,
-              marginBottom: 24,
-            }}
-          >
-            "{service.testimonial.quote}"
-          </p>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 10,
-            }}
-          >
-            <div
-              style={{
-                width: 40,
-                height: 40,
-                borderRadius: "50%",
-                background: `linear-gradient(135deg, ${BRAND_DARK}, ${BRAND})`,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#fff",
-                fontWeight: 700,
-                fontSize: 14,
-              }}
-            >
-              {service.testimonial.name.charAt(0)}
-            </div>
-            <div style={{ textAlign: "left" }}>
-              <div style={{ fontSize: 14, fontWeight: 700, color: "#000" }}>
-                {service.testimonial.name}
-              </div>
-              <div style={{ fontSize: 12.5, color: "#5a7686" }}>
-                {service.testimonial.role}, {service.testimonial.company}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  
 
       {/* ── FAQ ── */}
       <section style={{ padding: "72px 1.5rem", background: "#fff" }}>
@@ -2366,6 +2328,8 @@ export default function ServicePages({ defaultService }) {
         </div>
       </section>
 
+   
+
       {/* ── Bottom CTA Banner ── */}
       <section
         style={{
@@ -2420,20 +2384,7 @@ export default function ServicePages({ defaultService }) {
         </div>
       </section>
 
-      {/* ── Footer note ── */}
-      <div
-        style={{
-          background: "#fff",
-          textAlign: "center",
-          padding: "20px",
-          borderTop: "1px solid #e8f6fd",
-        }}
-      >
-        <p style={{ color: "#aaa", fontSize: 12, margin: 0 }}>
-          © {new Date().getFullYear()} MacaroniX — Crafted for Digital
-          Excellence
-        </p>
-      </div>
+    
     </div>
   );
 }

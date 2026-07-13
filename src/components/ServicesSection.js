@@ -26,11 +26,12 @@ const services = [
     href: "/services/web",
   },
   {
-    icon: <FaUsers size={26} />,
-    title: "Social Media Marketing",
-    desc: "Grow your presence with creative, data-driven content that keeps people coming back.",
-    href: "/services/social",
+    icon: <FaDatabase size={26} />,
+    title: "Custom Software & ERP",
+    desc: "Custom ERP and internal tools built around your exact workflow, not a template.",
+    href: "/services/erp",
   },
+
   {
     icon: <FaRobot size={26} />,
     title: "AI Automation",
@@ -52,10 +53,10 @@ const services = [
     href: "/services/agentic-ai",
   },
   {
-    icon: <FaDatabase size={26} />,
-    title: "Custom Software & ERP",
-    desc: "Custom ERP and internal tools built around your exact workflow, not a template.",
-    href: "/services/erp",
+    icon: <FaUsers size={26} />,
+    title: "Social Media Marketing",
+    desc: "Grow your presence with creative, data-driven content that keeps people coming back.",
+    href: "/services/social",
   },
   {
     icon: <FaMobileAlt size={26} />,
@@ -178,7 +179,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative py-20 md:py-28 px-3 md:px-20 bg-[#f9fbfd] text-center text-[#000000] overflow-hidden"
+      className="relative pt-4 md:pt-8 pb-20 md:pb-28 px-3 md:px-20 bg-[#f9fbfd] text-center text-[#000000] overflow-hidden"
     >
       {/* decorative background blobs, echoing the hero */}
       <div
